@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Coin-Sized Black Hole — A Cinematic Visualization</title>
+  <meta name="description" content="A scientifically grounded, hypothetical animation of a coin-sized black hole appearing in a city plaza.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app" class="idle">
+  <div id="stage">
+    <canvas id="view" aria-label="Cinematic animation of a black hole appearing among people on Earth" role="img"></canvas>
+    <div id="progress"><div id="progressBar"></div></div>
+
+    <header id="hudTop">
+      <div id="legend" aria-label="Evidence legend">
+        <span class="legendItem"><span class="dot green"></span>GREEN — Established physics</span>
+        <span class="legendItem"><span class="dot amber"></span>AMBER — Model-dependent or uncertain</span>
+        <span class="legendItem"><span class="dot red"></span>RED — Speculative cinematic visualization</span>
+      </div>
+      <div id="clock">
+        <div class="clockLabel">ANIMATION TIME</div>
+        <div id="clockValue">00:00.0</div>
+        <div class="clockNote">Illustrative playback time, not a physical prediction</div>
+      </div>
+    </header>
+
+    <div id="shotRow"><span id="shotName"></span><span id="scaleBadge"></span><span id="motionNote" hidden>Reduced motion on</span></div>
+
+    <section id="caption" aria-live="polite">
+      <div class="kicker"><span id="sceneDot" class="dot amber"></span><span id="sceneKicker"></span></div>
+      <h1 id="sceneTitle"></h1>
+      <p id="sceneDesc"></p>
+      <ul id="facts"></ul>
+      <div id="gauge"><span>Accretion intensity <em>(illustrative, depends on matter supply)</em></span><div class="bar"><div id="gaugeFill"></div></div><b id="gaugeVal">0%</b></div>
+    </section>
+
+    <section id="summary" aria-label="Final scientific summary">
+      <h2>Final scientific summary</h2>
+      <table><tbody id="summaryBody"></tbody></table>
+    </section>
+
+    <section id="endcard">
+      <div class="endInner">
+        <h2>What we know, and what we imagined</h2>
+        <p><span class="dot green"></span><span id="endEstablished"></span></p>
+        <p><span class="dot red"></span><span id="endHypothetical"></span></p>
+        <p class="small">Press ↻ to watch again.</p>
+      </div>
+    </section>
+
+    <div id="loading"><div>Rendering planet…</div></div>
+    <div id="startgate">
+      <div class="gateInner">
+        <p class="eyebrow">A hypothetical, cinematic visualization</p>
+        <h1>What if a coin-sized black hole appeared among us?</h1>
+        <p>About 2.4 cm across, with the mass of 1.36 Earths. Nine scenes, from an ordinary afternoon to the quiet aftermath. Established physics and speculation are labelled throughout.</p>
+        <div class="gateBtns">
+          <button id="beginSound" class="primary">▶ Begin with sound</button>
+          <button id="beginSilent">Begin silently</button>
+        </div>
+        <p class="small">Space: play/pause · ←/→: ±5 s · [ ]: scenes · 1–4: speed · C: cinematic · F: fullscreen · M: mute</p>
+      </div>
+    </div>
+  </div>
+
+  <footer id="controls">
+    <div class="row main">
+      <div class="group">
+        <button id="prevBtn" aria-label="Previous scene" title="Previous scene">⏮</button>
+        <button id="playBtn" class="play" aria-label="Play">▶</button>
+        <button id="nextBtn" aria-label="Next scene" title="Next scene">⏭</button>
+        <button id="restartBtn" aria-label="Restart" title="Restart">↺</button>
+      </div>
+      <div class="scrubWrap">
+        <div id="ticks"></div>
+        <input id="scrubber" type="range" min="0" max="1000" value="0" aria-label="Timeline">
+      </div>
+      <span id="timeText">00:00.0 / 01:36.0</span>
+      <div class="group speed" role="group" aria-label="Playback speed">
+        <button data-s="0.5">0.5×</button><button data-s="1" class="active">1×</button><button data-s="2">2×</button><button data-s="4">4×</button>
+      </div>
+      <div class="group">
+        <button id="muteBtn" aria-label="Toggle sound" title="Sound (M)">🔇</button>
+        <button id="cineBtn" aria-label="Cinematic mode" title="Cinematic mode (C)">◐</button>
+        <button id="fsBtn" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
+      </div>
+    </div>
+    <nav id="sceneChips" aria-label="Scenes"></nav>
+  </footer>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

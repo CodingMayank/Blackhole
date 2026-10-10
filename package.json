@@ -1,0 +1,10 @@
+{
+  "name": "cinematic-black-hole",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Hypothetical cinematic visualization of a coin-sized black hole appearing among people on Earth (Canvas 2D, vanilla JS).",
+  "scripts": {
+    "start": "node server.mjs 8080"
+  }
+}
